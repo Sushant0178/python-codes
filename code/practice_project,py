@@ -1,0 +1,96 @@
+# Predefined username and password
+username = "admin"
+password = "password"
+
+print("-" * 100)
+print("\t\t\t\t\tStudent Management System")
+print("-" * 100)
+
+# Login loop
+while True:
+    entered_username = input("Enter your username: ")
+    entered_password = input("Enter your password: ")
+
+    if entered_username == username and entered_password == password:
+        print("Login successful.")
+        break
+    else:
+        print("Invalid username or password. Please try again.")
+
+# Now you can proceed with the student management options
+students = {}
+
+while True:
+    # ... Rest of your code for student management options ...
+    students = {}  # Use a dictionary to store multiple student records
+
+    print("-" * 100)
+    print("\t\t\t\t\tStudent Management System")
+    print("-" * 100)
+
+    while True:
+        print("""
+            1. Add
+            2. Display
+            3. Update
+            4. Delete
+            5. Exit
+            """)
+
+        choice = int(input("Enter your choice: "))
+        
+        if choice == 1:
+            try:
+                name = input("Enter the name: ")
+                roll = int(input("Enter the roll number: "))
+                city = input("Enter the city: ")
+                percentage = float(input("Enter the percentage: "))
+                students[roll] = {"name": name, "roll no": roll, "city": city, "percentage": percentage}
+            except:
+                print("Enter again")
+                
+                
+            # Add the new student to the dictionary
+            
+            
+            
+        elif choice == 2:
+            print("|{:^20}|{:^20}|{:^20}|{:^20}|".format("Name", "Roll number", "City", "Percentage"))
+            print("-" * 100)
+            for roll, student_info in students.items():
+                print("|{:^20}|{:^20}|{:^20}|{:^20}|".format(student_info["name"], student_info["roll no"], student_info["city"], student_info["percentage"]))
+        
+        elif choice == 3:
+            roll = int(input("Enter the roll number of the student to update: "))
+            if roll in students:
+                student_info = students[roll]
+                print("Current Details:")
+                print("Name:", student_info["name"])
+                print("City:", student_info["city"])
+                print("Percentage:", student_info["percentage"])
+
+                name = input("Enter the updated name: ")
+                city = input("Enter the updated city: ")
+                percentage = float(input("Enter the updated percentage: "))
+
+                # Update the student's information
+                student_info["name"] = name
+                student_info["city"] = city
+                student_info["percentage"] = percentage
+                print("Student details updated successfully.")
+            else:
+                print("Student with roll number", roll, "not found.")
+
+        elif choice == 4:
+            roll = int(input("Enter the roll number of the student to delete: "))
+            if roll in students:
+                del students[roll]
+                print("Student with roll number", roll, "deleted successfully.")
+            else:
+                print("Student with roll number", roll, "not found.")
+        
+        elif choice == 5:
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid option. Please try again!")
