@@ -27,3 +27,7 @@ for item in my_list:
         print(f"{item} contains 's'")
     else:
         print(f"{item} does not contain 's'")
+        
+        
+        
+        #lkkj;khynmg'lhnm'fgn'fnh'flhn'fl,ng'lfn'lmgfn//ldlmgn;/kdm;/kn l.
