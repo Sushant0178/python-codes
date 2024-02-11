@@ -13,4 +13,4 @@ while len(unique_names) < 10000:
 random_names = list(unique_names)
 
 # Print the first few names as a sample
-print("Sample of Generated Names:", random_names[:10000000])
+print("Sample of Generated Names:", random_names[:10000000])ojjvosdnvozjdjvnkzjdvbkzxjvj kx
