@@ -12,6 +12,4 @@ elif b==2:
    print ("two")
 else:
     print(a[1]+ a[2] +a[5])
-"jhhsfkvsifjv sfv "
-
     
